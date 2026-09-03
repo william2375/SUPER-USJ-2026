@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <title>2026 USJ 萬聖節 Express 8 任天堂無敵星星全制霸攻略</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Zen Maru Gothic & Outfit for comfortable reading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        milktea: {
+                            bg: '#F8F5F0',        /* 基底鮮奶茶色 */
+                            card: '#FFFFFF',      /* 奶泡純白卡片 */
+                            border: '#E6DCCF',    /* 溫和奶茶邊框 */
+                            text: '#3D3028',      /* 深焦糖/濃縮咖啡內文 (高清晰讀取) */
+                            muted: '#78685E',     /* 伯爵奶茶次要文字 */
+                            caramel: '#C28352',   /* 焦糖奶茶主色 */
+                            caramelDark: '#A36536',
+                            earlgrey: '#8C7A6B',  /* 伯爵灰棕 */
+                            foam: '#FFFBF7',      /* 輕奶霜底色 */
+                            matcha: '#709070',    /* 抹茶奶茶 */
+                            taro: '#8A7B9B',      /* 芋泥奶茶 */
+                            thai: '#D17A5A',      /* 泰奶紅 */
+                            ocean: '#5B869F'      /* 蝶豆花奶藍 */
+                        },
+                        nintendo: {
+                            dark: '#F8F5F0',
+                            card: '#FFFFFF',
+                            red: '#D17A5A',
+                            redHover: '#B86143',
+                            blue: '#5B869F',
+                            green: '#709070',
+                            yellow: '#C28352',
+                            pipe: '#709070',
+                            brick: '#A36536',
+                        }
+                    },
+                    fontFamily: {
+                        nintendo: ['Outfit', 'Zen Maru Gothic', 'sans-serif'],
+                        sans: ['Zen Maru Gothic', 'Noto Sans TC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .mario-bg {
+            background: linear-gradient(180deg, #F5EFE6 0%, #F8F5F0 50%, #F3ECE1 100%);
+        }
+        .star-glow {
+            text-shadow: 0 0 12px rgba(194, 131, 82, 0.3);
+        }
+        .rainbow-star {
+            animation: starPulse 2s infinite alternate ease-in-out;
+        }
+        @keyframes starPulse {
+            0% { transform: scale(1); filter: drop-shadow(0 0 6px #C28352); }
+            50% { transform: scale(1.08); filter: drop-shadow(0 0 12px #D17A5A); }
+            100% { transform: scale(1); filter: drop-shadow(0 0 8px #709070); }
+        }
+        .block-border {
+            border: 2px solid #E6DCCF;
+            box-shadow: 0 4px 12px rgba(120, 104, 94, 0.08);
+            transition: all 0.25s ease;
+        }
+        .block-border:hover {
+            transform: translateY(-2px);
+            border-color: #C28352;
+            box-shadow: 0 8px 20px rgba(194, 131, 82, 0.15);
+        }
+        .pipe-line {
+            background: linear-gradient(180deg, #709070 0%, #C28352 50%, #D17A5A 100%);
+        }
+        /* 自訂溫和奶茶色滾動條 */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F8F5F0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D8CBBC;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C28352;
+        }
+    </style>
+</head>
+<body class="bg-milktea-bg text-milktea-text font-sans antialiased mario-bg min-h-screen">
+
+    <!-- 頂部導覽列 -->
+    <nav class="sticky top-0 z-50 bg-[#F8F5F0]/90 backdrop-blur-md border-b-2 border-milktea-border px-4 py-3 shadow-sm">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-star text-2xl text-milktea-caramel rainbow-star"></i>
+                <span class="font-nintendo text-xl md:text-2xl text-milktea-text tracking-wider font-bold">SUPER USJ 2026</span>
+            </div>
+            <div class="hidden lg:flex space-x-6 text-sm font-bold tracking-wide">
+                <a href="#targets" class="text-milktea-caramel hover:text-milktea-text transition-colors"><i class="fa-solid fa-trophy mr-1"></i>無敵目標</a>
+                <a href="#express" class="text-milktea-thai hover:text-milktea-text transition-colors"><i class="fa-solid fa-ticket mr-1"></i>Express 8項</a>
+                <a href="#duo-challenge" class="text-milktea-matcha hover:text-milktea-text transition-colors"><i class="fa-solid fa-gamepad mr-1"></i>雙版本關卡</a>
+                <a href="#timeline" class="text-milktea-ocean hover:text-milktea-text transition-colors"><i class="fa-regular fa-clock mr-1"></i>冒險地圖</a>
+                <a href="#warnings" class="text-milktea-caramel hover:text-milktea-text transition-colors"><i class="fa-solid fa-shield-halved mr-1"></i>食人花提示</a>
+            </div>
+            <a href="#timeline" class="lg:hidden bg-milktea-caramel text-white font-nintendo font-bold px-3 py-1.5 rounded-lg text-xs shadow-sm">
+                冒險時間軸
+            </a>
+        </div>
+    </nav>
+
+    <!-- 主視覺 Banner (奶茶無敵星星 Header) -->
+    <header class="relative py-14 px-4 text-center overflow-hidden border-b border-milktea-border bg-milktea-foam/60">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-milktea-caramel/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-milktea-thai/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative max-w-4xl mx-auto space-y-4">
+            <div class="flex justify-center items-center gap-3 flex-wrap mb-1">
+                <span class="bg-milktea-caramel text-white border border-milktea-caramel text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm flex items-center gap-1.5">
+                    <i class="fa-solid fa-star text-amber-200"></i> STAR POWER ACTIVE
+                </span>
+                <span class="bg-white text-milktea-text border border-milktea-border text-xs font-bold px-3.5 py-1.5 rounded-full shadow-sm">
+                    <i class="fa-solid fa-calendar-day mr-1 text-milktea-caramel"></i> 2026/10/14（三）萬聖限定
+                </span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black text-milktea-text tracking-tight leading-tight star-glow font-nintendo">
+                SUPER NINTENDO WORLD<br><span class="text-milktea-caramel font-extrabold tracking-wider text-3xl md:text-6xl">INVINCIBLE STAR GUIDE</span>
+            </h1>
+            <p class="text-milktea-muted text-sm md:text-base max-w-2xl mx-auto pt-1 leading-relaxed font-medium">
+                ⭐ 啟動無敵星星模式！開園 07:00 全速通關至閉園。Express 8 項全制霸 ＋ 瑪利歐/哈利波特/萬聖節夜間雙版本通關！
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-10 space-y-14">
+
+        <!-- 1. 今日主要目標 (⭐ 無敵星星通關 Target List) -->
+        <section id="targets" class="space-y-5">
+            <div class="border-l-4 border-milktea-caramel pl-4 flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-milktea-text font-nintendo flex items-center gap-2.5">
+                        <i class="fa-solid fa-star text-milktea-caramel text-xl rainbow-star"></i>
+                        今日無敵星星目標 (Super Star Targets)
+                    </h2>
+                    <p class="text-milktea-muted text-xs md:text-sm mt-0.5">開啟無敵狀態！今日必須達成的所有關卡成就</p>
+                </div>
+                <span class="hidden md:inline-block bg-milktea-caramel/15 text-milktea-caramel font-bold text-xs px-3 py-1 rounded-full border border-milktea-caramel/30">
+                    ⭐ 100% CLEAR
+                </span>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                <div class="bg-milktea-card border border-milktea-border p-3.5 rounded-xl flex items-center gap-3 shadow-sm hover:border-milktea-caramel transition">
+                    <i class="fa-solid fa-circle-check text-milktea-caramel text-lg"></i>
+                    <span class="text-xs md:text-sm text-milktea-text font-bold">Express Pass 8項全用</span>
+                </div>
+                <div class="bg-milktea-card border border-milktea-border p-3.5 rounded-xl flex items-center gap-3 shadow-sm hover:border-milktea-caramel transition">
+                    <i class="fa-solid fa-circle-check text-milktea-caramel text-lg"></i>
+                    <span class="text-xs md:text-sm text-milktea-text font-bold">好萊塢美夢 (雙版本)</span>
+                </div>
+                <div class="bg-milktea-card border border-milktea-border p-3.5 rounded-xl flex items-center gap-3 shadow-sm hover:border-milktea-caramel transition">
+                    <i class="fa-solid fa-circle-check text-milktea-caramel text-lg"></i>
+                    <span class="text-xs md:text-sm text-milktea-text font-bold">大白鯊 (普通+RED ALERT)</span>
+                </div>
+                <div class="bg-milktea-card border border-milktea-border p-3.5 rounded-xl flex items-center gap-3 shadow-sm hover:border-milktea-caramel transition">
+                    <i class="fa-solid fa-circle-check text-milktea-caramel text-lg"></i>
+                    <span class="text-xs md:text-sm text-milktea-text font-bold">侏羅紀公園 (普通+黑暗深淵)</span>
+                </div>
+                <div class="bg-milktea-card border border-milktea-border p-3.5 rounded-xl flex items-center gap-3 shadow-sm hover:border-milktea-caramel transition">
+                    <i class="fa-solid fa-circle-check text-milktea-caramel text-lg"></i>
+                    <span class="text-xs md:text-sm text-milktea-text font-bold">超級任天堂世界完整體驗</span>
+                </div>
+                <div class="bg-milktea-card border border-milktea-border p-3.5 rounded-xl flex items-center gap-3 shadow-sm hover:border-milktea-caramel transition">
+                    <i class="fa-solid fa-circle-check text-milktea-caramel text-lg"></i>
+                    <span class="text-xs md:text-sm text-milktea-text font-bold">咚奇剛能量手環互動</span>
+                </div>
+                <div class="bg-milktea-card border border-milktea-border p-3.5 rounded-xl flex items-center gap-3 shadow-sm hover:border-milktea-caramel transition">
+                    <i class="fa-solid fa-circle-check text-milktea-caramel text-lg"></i>
+                    <span class="text-xs md:text-sm text-milktea-text font-bold">哈利波特禁忌之旅+魔杖</span>
+                </div>
+                <div class="bg-milktea-card border border-milktea-border p-3.5 rounded-xl flex items-center gap-3 shadow-sm hover:border-milktea-caramel transition">
+                    <i class="fa-solid fa-circle-check text-milktea-caramel text-lg"></i>
+                    <span class="text-xs md:text-sm text-milktea-text font-bold">水世界表演 (14:45場)</span>
+                </div>
+                <div class="bg-milktea-card border border-milktea-border p-3.5 rounded-xl flex items-center gap-3 shadow-sm hover:border-milktea-caramel transition">
+                    <i class="fa-solid fa-circle-check text-milktea-caramel text-lg"></i>
+                    <span class="text-xs md:text-sm text-milktea-text font-bold">2026 Halloween限定內容</span>
+                </div>
+                <div class="bg-milktea-card border border-milktea-border p-3.5 rounded-xl flex items-center gap-3 shadow-sm hover:border-milktea-caramel transition">
+                    <i class="fa-solid fa-circle-check text-milktea-caramel text-lg"></i>
+                    <span class="text-xs md:text-sm text-milktea-text font-bold">街頭殭屍 + 終極群舞</span>
+                </div>
+                <div class="bg-milktea-card border border-milktea-border p-3.5 rounded-xl flex items-center gap-3 col-span-2 md:col-span-1 shadow-sm hover:border-milktea-caramel transition">
+                    <i class="fa-solid fa-circle-check text-milktea-caramel text-lg"></i>
+                    <span class="text-xs md:text-sm text-milktea-text font-bold">開園 07:00 玩到閉園</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Express Pass 8項問號磚塊時程 (❓ Express Schedule) -->
+        <section id="express" class="space-y-5">
+            <div class="border-l-4 border-milktea-thai pl-4 flex justify-between items-end">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-milktea-text font-nintendo flex items-center gap-2.5">
+                        <i class="fa-solid fa-box-open text-milktea-caramel text-xl"></i>
+                        Express Pass 8項問號磚塊時程
+                    </h2>
+                    <p class="text-milktea-muted text-xs md:text-sm mt-0.5">寶箱道具已解鎖！請嚴格遵守指定時段通關</p>
+                </div>
+                <span class="hidden md:inline-block bg-milktea-thai/10 text-milktea-thai text-xs font-bold px-3 py-1 rounded-full border border-milktea-thai/30">
+                    🎟️ 快通 8/8 全制霸
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                <div class="bg-milktea-card border-2 border-milktea-border p-4 rounded-2xl space-y-2 block-border">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="bg-milktea-thai text-white font-bold px-2 py-0.5 rounded">① 12:00 – 12:30</span>
+                        <span class="text-milktea-caramel font-bold font-mono">指定時間</span>
+                    </div>
+                    <h3 class="font-bold text-milktea-text text-base">🍄 瑪利歐賽車～庫巴的挑戰書～</h3>
+                    <p class="text-xs text-milktea-muted">超級任天堂世界第一彈</p>
+                </div>
+
+                <div class="bg-milktea-card border-2 border-milktea-border p-4 rounded-2xl space-y-2 block-border">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="bg-milktea-matcha text-white font-bold px-2 py-0.5 rounded">② 12:30 – 13:00</span>
+                        <span class="text-milktea-caramel font-bold font-mono">指定時間</span>
+                    </div>
+                    <h3 class="font-bold text-milktea-text text-base">🥚 耀西冒險</h3>
+                    <p class="text-xs text-milktea-muted">超級任天堂世界第二彈</p>
+                </div>
+
+                <div class="bg-milktea-card border-2 border-milktea-border p-4 rounded-2xl space-y-2 block-border">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="bg-milktea-caramel text-white font-bold px-2 py-0.5 rounded">③ 13:00 – 13:30</span>
+                        <span class="text-milktea-caramel font-bold font-mono">指定時間</span>
+                    </div>
+                    <h3 class="font-bold text-milktea-text text-base">🦍 咚奇剛瘋狂礦車</h3>
+                    <p class="text-xs text-milktea-muted">超級任天堂世界第三彈</p>
+                </div>
+
+                <div class="bg-milktea-card border-2 border-milktea-border p-4 rounded-2xl space-y-2 block-border">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="bg-milktea-ocean text-white font-bold px-2 py-0.5 rounded">④ 無指定時間</span>
+                        <span class="text-milktea-matcha font-bold font-mono">彈性安排</span>
+                    </div>
+                    <h3 class="font-bold text-milktea-text text-base">🪄 哈利波特禁忌之旅</h3>
+                    <p class="text-xs text-milktea-muted">規劃於 15:30（水世界後）使用</p>
+                </div>
+
+                <div class="bg-milktea-card border-2 border-milktea-border p-4 rounded-2xl space-y-2 block-border">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="bg-milktea-ocean text-white font-bold px-2 py-0.5 rounded">⑤ 17:30 – 18:00</span>
+                        <span class="text-milktea-caramel font-bold font-mono">指定時間</span>
+                    </div>
+                    <h3 class="font-bold text-milktea-text text-base">🦅 鷹馬飛行</h3>
+                    <p class="text-xs text-milktea-muted">哈利波特園區限定設施</p>
+                </div>
+
+                <div class="bg-milktea-card border-2 border-milktea-border p-4 rounded-2xl space-y-2 block-border">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="bg-milktea-taro text-white font-bold px-2 py-0.5 rounded">⑥ 18:00 – 18:25</span>
+                        <span class="text-milktea-taro font-bold font-mono">CHOICE B</span>
+                    </div>
+                    <h3 class="font-bold text-milktea-text text-base">🦖 侏羅紀公園～黑暗深淵～</h3>
+                    <p class="text-xs text-milktea-muted">萬聖節 Night 限定版本</p>
+                </div>
+
+                <div class="bg-milktea-card border-2 border-milktea-border p-4 rounded-2xl space-y-2 block-border">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="bg-milktea-caramel text-white font-bold px-2 py-0.5 rounded">⑦ 18:30 – 19:00</span>
+                        <span class="text-milktea-caramel font-bold font-mono">指定時間</span>
+                    </div>
+                    <h3 class="font-bold text-milktea-text text-base">👽 小小兵瘋狂乘車遊</h3>
+                    <p class="text-xs text-milktea-muted">小小兵樂園熱門設施</p>
+                </div>
+
+                <div class="bg-milktea-card border-2 border-milktea-border p-4 rounded-2xl space-y-2 block-border">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="bg-milktea-thai text-white font-bold px-2 py-0.5 rounded">⑧ 19:30 – 20:15</span>
+                        <span class="text-milktea-caramel font-bold font-mono">CHOICE A</span>
+                    </div>
+                    <h3 class="font-bold text-milktea-text text-base">🎢 好萊塢美夢・乘車遊</h3>
+                    <p class="text-xs text-milktea-muted">夜間 Express 通關體驗</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. 雙版本挑戰 (🎮 1UP 雙版本關卡挑戰) -->
+        <section id="duo-challenge" class="space-y-5">
+            <div class="border-l-4 border-milktea-matcha pl-4 flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-milktea-text font-nintendo flex items-center gap-2.5">
+                        <i class="fa-solid fa-gamepad text-milktea-matcha text-xl"></i>
+                        日間 vs 萬聖夜：1UP 雙版本關卡挑戰
+                    </h2>
+                    <p class="text-milktea-muted text-xs md:text-sm mt-0.5">解鎖隱藏關卡！同時體驗白天的歡樂與夜晚的萬聖驚悚</p>
+                </div>
+                <span class="hidden md:inline-block bg-milktea-matcha/10 text-milktea-matcha font-bold text-xs px-3 py-1 rounded-full border border-milktea-matcha/30">
+                    🍄 1UP CLEAR
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <!-- 挑戰 1 -->
+                <div class="bg-milktea-card border border-milktea-border p-5 rounded-2xl space-y-4 shadow-sm">
+                    <div class="flex items-center justify-between border-b border-milktea-border pb-3">
+                        <h3 class="font-bold text-lg text-milktea-text">🦖 侏羅紀公園乘船遊</h3>
+                        <span class="bg-milktea-matcha text-white text-xs px-2.5 py-0.5 rounded-full font-bold">2 / 2 完成</span>
+                    </div>
+                    <div class="space-y-2 text-xs md:text-sm">
+                        <div class="bg-milktea-foam p-3 rounded-lg border border-milktea-border">
+                            <span class="text-milktea-caramel font-bold block mb-0.5">☀️ 上午 (普通版)</span>
+                            <p class="text-milktea-text">11:15–11:45 一般排隊體驗（若排隊時間過長則順延）</p>
+                        </div>
+                        <div class="bg-[#F6EEF8] p-3 rounded-lg border border-milktea-taro/30">
+                            <span class="text-milktea-taro font-bold block mb-0.5">🌙 晚上 (黑暗深淵萬聖版)</span>
+                            <p class="text-milktea-text">18:00–18:25 使用 Express Choice B 入場</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 挑戰 2 -->
+                <div class="bg-milktea-card border border-milktea-border p-5 rounded-2xl space-y-4 shadow-sm">
+                    <div class="flex items-center justify-between border-b border-milktea-border pb-3">
+                        <h3 class="font-bold text-lg text-milktea-text">🦈 大白鯊</h3>
+                        <span class="bg-milktea-ocean text-white text-xs px-2.5 py-0.5 rounded-full font-bold">2 / 2 完成</span>
+                    </div>
+                    <div class="space-y-2 text-xs md:text-sm">
+                        <div class="bg-milktea-foam p-3 rounded-lg border border-milktea-border">
+                            <span class="text-milktea-caramel font-bold block mb-0.5">☀️ 上午 (普通版)</span>
+                            <p class="text-milktea-text">10:30–11:15 一般排隊體驗</p>
+                        </div>
+                        <div class="bg-[#FAF0ED] p-3 rounded-lg border border-milktea-thai/30">
+                            <span class="text-milktea-thai font-bold block mb-0.5">🌙 晚上 (RED ALERT 萬聖版)</span>
+                            <p class="text-milktea-text">20:15–21:00 日落後排隊挑戰（視排隊時間彈性調整）</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 挑戰 3 -->
+                <div class="bg-milktea-card border border-milktea-border p-5 rounded-2xl space-y-4 shadow-sm">
+                    <div class="flex items-center justify-between border-b border-milktea-border pb-3">
+                        <h3 class="font-bold text-lg text-milktea-text">🎢 好萊塢美夢・乘車遊</h3>
+                        <span class="bg-milktea-thai text-white text-xs px-2.5 py-0.5 rounded-full font-bold">2 / 2 完成</span>
+                    </div>
+                    <div class="space-y-2 text-xs md:text-sm">
+                        <div class="bg-milktea-foam p-3 rounded-lg border border-milktea-border">
+                            <span class="text-milktea-caramel font-bold block mb-0.5">☀️ 上午 (普通版)</span>
+                            <p class="text-milktea-text">開園～09:00 直奔排隊（等待 ≤30分鐘 才排）</p>
+                        </div>
+                        <div class="bg-[#FAF0ED] p-3 rounded-lg border border-milktea-thai/30">
+                            <span class="text-milktea-thai font-bold block mb-0.5">🌙 晚上 (Express 版)</span>
+                            <p class="text-milktea-text">19:30–20:15 使用 Express Choice A 入場</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 全日行程時間軸 (🗺️ 冒險地圖 Timeline) -->
+        <section id="timeline" class="space-y-8">
+            <div class="text-center space-y-1">
+                <h2 class="text-3xl md:text-4xl font-bold text-milktea-text font-nintendo flex items-center justify-center gap-2.5 star-glow">
+                    <i class="fa-solid fa-map text-milktea-caramel"></i>
+                    全日冒險地圖時間軸 (07:00 → 閉園)
+                </h2>
+                <p class="text-milktea-muted text-xs md:text-sm">就像踩水管闖關一樣精準的通關流程</p>
+            </div>
+
+            <div class="relative pl-6 md:pl-0">
+                <!-- 時間軸水管線 -->
+                <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-2 pipe-line -translate-x-1/2 rounded-full hidden md:block"></div>
+                <div class="absolute left-4 top-0 bottom-0 w-2 pipe-line rounded-full md:hidden"></div>
+
+                <div class="space-y-8">
+                    
+                    <!-- 07:00 抵達 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="flex items-center justify-start w-full md:w-1/2 md:pr-10 md:justify-end">
+                            <div class="bg-milktea-card border border-milktea-border p-5 rounded-2xl w-full shadow-sm">
+                                <span class="bg-milktea-thai text-white font-bold text-xs px-2.5 py-1 rounded-full">07:00 ～ 開園</span>
+                                <h3 class="text-lg font-bold text-milktea-text mt-2">🌅 抵達 USJ & 準備闖關</h3>
+                                <ul class="text-milktea-muted text-xs md:text-sm mt-2 space-y-1 list-disc list-inside">
+                                    <li>提早 60～90 分鐘抵達入口排隊</li>
+                                    <li>準備 Studio Pass 與 Express Pass QR Code</li>
+                                    <li>開啟 USJ 官方 App，確認整理券／抽選券發放狀況</li>
+                                    <li>確認各 Halloween 設施等待時間</li>
+                                </ul>
+                                <p class="text-milktea-caramel text-xs mt-2"><i class="fa-solid fa-triangle-exclamation mr-1"></i>實際開園時間通常早於官方公告。</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-milktea-caramel border-4 border-milktea-bg flex items-center justify-center text-white font-bold text-xs z-10">
+                            <i class="fa-solid fa-flag-checkered"></i>
+                        </div>
+                        <div class="w-full md:w-1/2"></div>
+                    </div>
+
+                    <!-- 開園～09:00 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-1/2"></div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-milktea-thai border-4 border-milktea-bg flex items-center justify-center text-white font-bold text-xs z-10">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <div class="flex items-center justify-start w-full md:w-1/2 md:pl-10">
+                            <div class="bg-milktea-card border border-milktea-border p-5 rounded-2xl w-full shadow-sm">
+                                <span class="bg-milktea-ocean text-white font-bold text-xs px-2.5 py-1 rounded-full">開園 ～ 09:00</span>
+                                <h3 class="text-lg font-bold text-milktea-text mt-2">🎢 好萊塢美夢・乘車遊【普通版】</h3>
+                                <p class="text-milktea-muted text-xs md:text-sm mt-1">
+                                    直奔設施！若等待時間 <strong>≤ 30 分鐘</strong> 則直接排隊完成日間普通版。若排隊太長則放棄，留待晚上使用 Express。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 09:00～10:30 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="flex items-center justify-start w-full md:w-1/2 md:pr-10 md:justify-end">
+                            <div class="bg-milktea-card border border-milktea-border p-5 rounded-2xl w-full shadow-sm">
+                                <span class="bg-milktea-taro text-white font-bold text-xs px-2.5 py-1 rounded-full">09:00 ～ 10:30</span>
+                                <h3 class="text-lg font-bold text-milktea-text mt-2">🎃 Halloween 限定設施 第一輪</h3>
+                                <p class="text-milktea-muted text-xs md:text-sm mt-1">優先體驗 Express 未包含的萬聖限定項目：</p>
+                                <div class="grid grid-cols-2 gap-1.5 mt-2 text-xs text-milktea-text">
+                                    <span class="bg-milktea-foam p-1.5 rounded border border-milktea-border">① 生化危機 RE:安魂曲</span>
+                                    <span class="bg-milktea-foam p-1.5 rounded border border-milktea-border">② 恐怖工廠絕望殭屍</span>
+                                    <span class="bg-milktea-foam p-1.5 rounded border border-milktea-border">③ 18號地的魔女</span>
+                                    <span class="bg-milktea-foam p-1.5 rounded border border-milktea-border">④ 貞子的詛咒</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-milktea-taro border-4 border-milktea-bg flex items-center justify-center text-white font-bold text-xs z-10">
+                            <i class="fa-solid fa-ghost"></i>
+                        </div>
+                        <div class="w-full md:w-1/2"></div>
+                    </div>
+
+                    <!-- 10:30～11:45 雙設施普通版 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-1/2"></div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-milktea-ocean border-4 border-milktea-bg flex items-center justify-center text-white font-bold text-xs z-10">
+                            <i class="fa-solid fa-water"></i>
+                        </div>
+                        <div class="flex items-center justify-start w-full md:w-1/2 md:pl-10">
+                            <div class="bg-milktea-card border border-milktea-border p-5 rounded-2xl w-full shadow-sm">
+                                <span class="bg-milktea-ocean text-white font-bold text-xs px-2.5 py-1 rounded-full">10:30 ～ 11:45</span>
+                                <h3 class="text-lg font-bold text-milktea-text mt-2">🦈 大白鯊 + 🦖 侏羅紀公園【普通版】</h3>
+                                <ul class="text-milktea-muted text-xs md:text-sm mt-1 space-y-1">
+                                    <li><strong>10:30–11:15：</strong>🦈 大白鯊 (普通版)</li>
+                                    <li><strong>11:15–11:45：</strong>🦖 侏羅紀公園乘船遊 (普通版)</li>
+                                </ul>
+                                <p class="text-xs text-milktea-muted mt-2">目標完成 daytime 版本，夜間體驗特殊萬聖版！</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 11:45～12:00 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="flex items-center justify-start w-full md:w-1/2 md:pr-10 md:justify-end">
+                            <div class="bg-milktea-card border border-milktea-border p-4 rounded-xl w-full shadow-sm">
+                                <span class="bg-milktea-caramel text-white font-bold text-xs px-2.5 py-1 rounded-full">11:45 ～ 12:00</span>
+                                <h3 class="text-base font-bold text-milktea-text mt-1">🍴 快速補充體力 & 進入綠色水管</h3>
+                                <p class="text-milktea-muted text-xs mt-1">簡單補充水分與熱量，11:50 準時抵達超級任天堂世界入口準備進入。</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-milktea-caramel border-2 border-milktea-bg z-10"></div>
+                        <div class="w-full md:w-1/2"></div>
+                    </div>
+
+                    <!-- 12:00～14:00 任天堂三連發 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-1/2"></div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-milktea-caramel border-4 border-milktea-bg flex items-center justify-center text-white font-bold text-sm z-10 rainbow-star shadow-md">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="flex items-center justify-start w-full md:w-1/2 md:pl-10">
+                            <div class="bg-milktea-card border-2 border-milktea-caramel p-5 rounded-2xl w-full shadow-md">
+                                <span class="bg-milktea-caramel text-white font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">⭐ 無敵星星黃金 2 小時</span>
+                                <h3 class="text-xl font-bold text-milktea-text mt-2 font-nintendo">🍄 超級任天堂世界 Express 三連發 + 咚奇剛</h3>
+                                <div class="space-y-2 mt-3 text-xs md:text-sm text-milktea-text">
+                                    <div class="flex items-center justify-between bg-milktea-foam p-2 rounded border border-milktea-border">
+                                        <span>⭐ 12:00–12:30 瑪利歐賽車～庫巴的挑戰書～</span>
+                                        <span class="text-milktea-caramel font-bold">Express ①</span>
+                                    </div>
+                                    <div class="flex items-center justify-between bg-milktea-foam p-2 rounded border border-milktea-border">
+                                        <span>⭐ 12:30–13:00 耀西冒險</span>
+                                        <span class="text-milktea-caramel font-bold">Express ②</span>
+                                    </div>
+                                    <div class="flex items-center justify-between bg-milktea-foam p-2 rounded border border-milktea-border">
+                                        <span>⭐ 13:00–13:30 咚奇剛瘋狂礦車</span>
+                                        <span class="text-milktea-caramel font-bold">Express ③</span>
+                                    </div>
+                                    <div class="flex items-center justify-between bg-milktea-caramel/10 p-2 rounded border border-milktea-caramel/30">
+                                        <span>🦍 13:30–14:00 咚奇剛區域探索 + 能量手環互動金幣收集</span>
+                                        <span class="text-milktea-caramel font-bold">金幣 GET</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 14:00～15:30 水世界 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="flex items-center justify-start w-full md:w-1/2 md:pr-10 md:justify-end">
+                            <div class="bg-milktea-card border border-milktea-border p-5 rounded-2xl w-full shadow-sm">
+                                <span class="bg-milktea-ocean text-white font-bold text-xs px-2.5 py-1 rounded-full">14:00 ～ 15:30</span>
+                                <h3 class="text-lg font-bold text-milktea-text mt-2">🌊 水世界表演 (WaterWorld)</h3>
+                                <ul class="text-milktea-muted text-xs md:text-sm mt-1 space-y-1">
+                                    <li><strong>14:00：</strong>由任天堂世界移動至水世界</li>
+                                    <li><strong>14:20–14:30：</strong>抵達水世界入口入場</li>
+                                    <li><strong>14:45：</strong>🌊 觀賞精彩特技表演</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-milktea-ocean border-4 border-milktea-bg flex items-center justify-center text-white font-bold text-xs z-10">
+                            <i class="fa-solid fa-ship"></i>
+                        </div>
+                        <div class="w-full md:w-1/2"></div>
+                    </div>
+
+                    <!-- 15:30～17:15 哈利波特 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-1/2"></div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-milktea-taro border-4 border-milktea-bg flex items-center justify-center text-white font-bold text-xs z-10">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <div class="flex items-center justify-start w-full md:w-1/2 md:pl-10">
+                            <div class="bg-milktea-card border border-milktea-border p-5 rounded-2xl w-full shadow-sm">
+                                <span class="bg-milktea-taro text-white font-bold text-xs px-2.5 py-1 rounded-full">15:30 ～ 17:15 🪄 魔法關卡</span>
+                                <h3 class="text-xl font-bold text-milktea-text mt-2">哈利波特魔法世界完整探索</h3>
+                                <div class="space-y-2 text-xs md:text-sm mt-2 text-milktea-muted">
+                                    <p><strong>15:30–16:15：</strong>⭐ 禁忌之旅 (Express ④)</p>
+                                    <p><strong>16:15–17:00：</strong>魔杖互動體驗 (Wand Magic)、霍格華茲城堡拍照、活米村商店探索</p>
+                                    <p><strong>17:00–17:15：</strong>☕ 奶油啤酒休憩補水，準備 17:30 鷹馬飛行</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 17:30～18:00 鷹馬飛行 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="flex items-center justify-start w-full md:w-1/2 md:pr-10 md:justify-end">
+                            <div class="bg-milktea-card border border-milktea-border p-5 rounded-2xl w-full shadow-sm">
+                                <span class="bg-milktea-ocean text-white font-bold text-xs px-2.5 py-1 rounded-full">17:30 ～ 18:00</span>
+                                <h3 class="text-lg font-bold text-milktea-text mt-2">🦅 鷹馬飛行</h3>
+                                <p class="text-milktea-muted text-xs md:text-sm mt-1">⭐ Express ⑤ 通關。提前 10 分鐘至設施現場準備。</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-milktea-ocean border-4 border-milktea-bg flex items-center justify-center text-white font-bold text-xs z-10">
+                            <i class="fa-solid fa-crow"></i>
+                        </div>
+                        <div class="w-full md:w-1/2"></div>
+                    </div>
+
+                    <!-- 18:00 HALLOWEEN NIGHT 夜間模式 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-1/2"></div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-milktea-thai border-4 border-milktea-bg flex items-center justify-center text-white font-bold text-sm z-10 shadow-md animate-bounce">
+                            <i class="fa-solid fa-biohazard"></i>
+                        </div>
+                        <div class="flex items-center justify-start w-full md:w-1/2 md:pl-10">
+                            <div class="bg-milktea-card border-2 border-milktea-thai p-5 rounded-2xl w-full shadow-md">
+                                <span class="bg-milktea-thai text-white font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">18:00 關鍵節點</span>
+                                <h3 class="text-xl font-bold text-milktea-text mt-2 font-nintendo">🚨 HALLOWEEN NIGHT 夜間萬聖關卡啟動！</h3>
+                                <p class="text-milktea-muted text-xs md:text-sm mt-1">園區氣氛驟變！街頭殭屍出沒、萬聖夜間版設施正式開啟。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 18:00～18:25 侏羅紀黑暗深淵 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="flex items-center justify-start w-full md:w-1/2 md:pr-10 md:justify-end">
+                            <div class="bg-milktea-card border border-milktea-border p-5 rounded-2xl w-full shadow-sm">
+                                <span class="bg-milktea-taro text-white font-bold text-xs px-2.5 py-1 rounded-full">18:00 ～ 18:25</span>
+                                <h3 class="text-lg font-bold text-milktea-text mt-2">🦖 侏羅紀公園～黑暗深淵～</h3>
+                                <p class="text-milktea-muted text-xs md:text-sm mt-1">⭐ Express Choice B 解鎖夜間萬聖限定版！完成後獨立前往小小兵。</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-milktea-taro border-4 border-milktea-bg flex items-center justify-center text-white font-bold text-xs z-10">
+                            <i class="fa-solid fa-dragon"></i>
+                        </div>
+                        <div class="w-full md:w-1/2"></div>
+                    </div>
+
+                    <!-- 18:30～19:00 小小兵 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-1/2"></div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-milktea-caramel border-4 border-milktea-bg flex items-center justify-center text-white font-bold text-xs z-10">
+                            <i class="fa-solid fa-face-laugh-squint"></i>
+                        </div>
+                        <div class="flex items-center justify-start w-full md:w-1/2 md:pl-10">
+                            <div class="bg-milktea-card border border-milktea-border p-5 rounded-2xl w-full shadow-sm">
+                                <span class="bg-milktea-caramel text-white font-bold text-xs px-2.5 py-1 rounded-full">18:30 ～ 19:00</span>
+                                <h3 class="text-lg font-bold text-milktea-text mt-2">👽 小小兵瘋狂乘車遊</h3>
+                                <p class="text-milktea-muted text-xs md:text-sm mt-1">⭐ Express ⑥ 指定時間準時通關。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 19:00～19:30 街頭殭屍 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="flex items-center justify-start w-full md:w-1/2 md:pr-10 md:justify-end">
+                            <div class="bg-milktea-card border border-milktea-border p-5 rounded-2xl w-full shadow-sm">
+                                <span class="bg-milktea-matcha text-white font-bold text-xs px-2.5 py-1 rounded-full">19:00 ～ 19:30</span>
+                                <h3 class="text-lg font-bold text-milktea-text mt-2">🧟 街頭殭屍體驗 (Street Zombies)</h3>
+                                <p class="text-milktea-muted text-xs md:text-sm mt-1">專屬 30 分鐘沉浸式體驗！不排一般設施，穿梭各區拍攝各式驚悚殭屍。</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-milktea-matcha border-4 border-milktea-bg flex items-center justify-center text-white font-bold text-xs z-10">
+                            <i class="fa-solid fa-skull"></i>
+                        </div>
+                        <div class="w-full md:w-1/2"></div>
+                    </div>
+
+                    <!-- 19:30～20:15 好萊塢美夢 Express -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-1/2"></div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-milktea-caramel border-4 border-milktea-bg flex items-center justify-center text-white font-bold text-sm z-10 rainbow-star shadow-md">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="flex items-center justify-start w-full md:w-1/2 md:pl-10">
+                            <div class="bg-milktea-card border-2 border-milktea-caramel p-5 rounded-2xl w-full shadow-md">
+                                <span class="bg-milktea-caramel text-white font-bold text-xs px-2.5 py-1 rounded-full">19:30 ～ 20:15</span>
+                                <h3 class="text-lg font-bold text-milktea-text mt-2">🎢 好萊塢美夢・乘車遊 (Express 版)</h3>
+                                <p class="text-milktea-muted text-xs md:text-sm mt-1">⭐ Express Choice A 入場！正式宣告 <strong>Express 8 項全部制霸達成</strong> 🎉！</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 20:15～21:00 大白鯊 RED ALERT -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="flex items-center justify-start w-full md:w-1/2 md:pr-10 md:justify-end">
+                            <div class="bg-milktea-card border border-milktea-border p-5 rounded-2xl w-full shadow-sm">
+                                <span class="bg-milktea-thai text-white font-bold text-xs px-2.5 py-1 rounded-full">20:15 ～ 21:00</span>
+                                <h3 class="text-lg font-bold text-milktea-text mt-2">🦈 大白鯊～RED ALERT～ (夜間萬聖版)</h3>
+                                <p class="text-milktea-muted text-xs md:text-sm mt-1">挑戰夜間紅色警報版本！若排隊過長則優先保留最後一場殭屍群舞。</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-milktea-thai border-4 border-milktea-bg flex items-center justify-center text-white font-bold text-xs z-10">
+                            <i class="fa-solid fa-fish-fins"></i>
+                        </div>
+                        <div class="w-full md:w-1/2"></div>
+                    </div>
+
+                    <!-- 21:00～閉園 高潮與結尾 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-1/2"></div>
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-milktea-matcha border-4 border-milktea-bg flex items-center justify-center text-white font-bold text-base z-10 shadow-md animate-bounce">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <div class="flex items-center justify-start w-full md:w-1/2 md:pl-10">
+                            <div class="bg-milktea-card border-2 border-milktea-matcha p-5 rounded-2xl w-full shadow-md">
+                                <span class="bg-milktea-matcha text-white font-bold text-xs px-2.5 py-1 rounded-full">21:00 ～ 閉園</span>
+                                <h3 class="text-xl font-bold text-milktea-text mt-2 font-nintendo">🕺 殭屍群舞 (Zombie de Dance) 終極高潮</h3>
+                                <ul class="text-milktea-muted text-xs md:text-sm mt-2 space-y-1">
+                                    <li>鎖定當日<strong>「最後一場殭屍群舞」</strong>（15週年特別回顧組曲）</li>
+                                    <li>把握最後時間於 Halloween 主題背景拍照</li>
+                                    <li>購買 2026 萬聖節限定周邊商品與瑪利歐紀念品</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 全天重要注意事項 (🌵 食人花與奇諾比奧攻略提示) -->
+        <section id="warnings" class="space-y-5">
+            <div class="border-l-4 border-milktea-caramel pl-4 flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-milktea-text font-nintendo flex items-center gap-2.5">
+                        <i class="fa-solid fa-shield-halved text-milktea-caramel text-xl"></i>
+                        全天 14 大食人花與奇諾比奧攻略提示
+                    </h2>
+                    <p class="text-milktea-muted text-xs md:text-sm mt-0.5">避免踩坑！出發前請再次細讀此密技大典</p>
+                </div>
+                <span class="hidden md:inline-block bg-milktea-caramel/10 text-milktea-caramel font-bold text-xs px-3 py-1 rounded-full border border-milktea-caramel/30">
+                    🍄 TIPS & TRICKS
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                
+                <div class="bg-milktea-card border border-milktea-border p-4 rounded-xl flex items-start space-x-3 shadow-sm hover:border-milktea-caramel transition">
+                    <span class="bg-milktea-thai text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 font-mono">1</span>
+                    <p class="text-xs md:text-sm text-milktea-text"><strong>Express 時間守則：</strong>指定時間務必嚴格遵守，逾時可能導致快通資格失效。</p>
+                </div>
+
+                <div class="bg-milktea-card border border-milktea-border p-4 rounded-xl flex items-start space-x-3 shadow-sm hover:border-milktea-caramel transition">
+                    <span class="bg-milktea-caramel text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 font-mono">2</span>
+                    <p class="text-xs md:text-sm text-milktea-text"><strong>任天堂極致黃金時段：</strong>12:00～13:30 三項 Express 連續使用，切勿為其他活動中途離開。</p>
+                </div>
+
+                <div class="bg-milktea-card border border-milktea-border p-4 rounded-xl flex items-start space-x-3 shadow-sm hover:border-milktea-caramel transition">
+                    <span class="bg-milktea-ocean text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 font-mono">3</span>
+                    <p class="text-xs md:text-sm text-milktea-text"><strong>晚間快通守則：</strong>17:30 鷹馬飛行與 18:30 小小兵時間固定，請提前到場。</p>
+                </div>
+
+                <div class="bg-milktea-card border border-milktea-border p-4 rounded-xl flex items-start space-x-3 shadow-sm hover:border-milktea-caramel transition">
+                    <span class="bg-milktea-thai text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 font-mono">4</span>
+                    <p class="text-xs md:text-sm text-milktea-text"><strong>18:00 關鍵切換：</strong>18:00 為 Halloween 夜間模式切換點，園區人潮與氣氛將大幅改變。</p>
+                </div>
+
+                <div class="bg-milktea-card border border-milktea-border p-4 rounded-xl flex items-start space-x-3 shadow-sm hover:border-milktea-caramel transition">
+                    <span class="bg-milktea-taro text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 font-mono">5</span>
+                    <p class="text-xs md:text-sm text-milktea-text"><strong>侏羅紀黑暗深淵：</strong>必須安排在 18:00 日落後，才能體驗完整夜間萬聖氛圍。</p>
+                </div>
+
+                <div class="bg-milktea-card border border-milktea-border p-4 rounded-xl flex items-start space-x-3 shadow-sm hover:border-milktea-caramel transition">
+                    <span class="bg-milktea-thai text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 font-mono">6</span>
+                    <p class="text-xs md:text-sm text-milktea-text"><strong>大白鯊 RED ALERT：</strong>安排於日落後體驗，享受紅色警報燈光效果。</p>
+                </div>
+
+                <div class="bg-milktea-card border border-milktea-border p-4 rounded-xl flex items-start space-x-3 shadow-sm hover:border-milktea-caramel transition">
+                    <span class="bg-milktea-matcha text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 font-mono">7</span>
+                    <p class="text-xs md:text-sm text-milktea-text"><strong>萬聖迷宮整理券：</strong>生化危機、恐怖工廠等項目，入園後需立刻開啟 App 搶抽 e整理券。</p>
+                </div>
+
+                <div class="bg-milktea-card border border-milktea-border p-4 rounded-xl flex items-start space-x-3 shadow-sm hover:border-milktea-caramel transition">
+                    <span class="bg-milktea-ocean text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 font-mono">8</span>
+                    <p class="text-xs md:text-sm text-milktea-text"><strong>水世界場次核對：</strong>目前以 14:45 場為目標，但當天務必以官方 Show Schedule 為準。</p>
+                </div>
+
+                <div class="bg-milktea-card border border-milktea-border p-4 rounded-xl flex items-start space-x-3 shadow-sm hover:border-milktea-caramel transition">
+                    <span class="bg-milktea-taro text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 font-mono">9</span>
+                    <p class="text-xs md:text-sm text-milktea-text"><strong>魔杖體驗順序：</strong>切勿強塞在水世界前，請於水世界結束後完整探索哈利波特區。</p>
+                </div>
+
+                <div class="bg-milktea-card border border-milktea-border p-4 rounded-xl flex items-start space-x-3 shadow-sm hover:border-milktea-caramel transition">
+                    <span class="bg-milktea-caramel text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 font-mono">10</span>
+                    <p class="text-xs md:text-sm text-milktea-text"><strong>咚奇剛手環互動：</strong>於 13:30 快通使用完後保留 30 分鐘，體驗更加順暢。</p>
+                </div>
+
+                <div class="bg-milktea-card border border-milktea-border p-4 rounded-xl flex items-start space-x-3 shadow-sm hover:border-milktea-caramel transition">
+                    <span class="bg-milktea-matcha text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 font-mono">11</span>
+                    <p class="text-xs md:text-sm text-milktea-text"><strong>靈活排隊策略：</strong>若普通版大白鯊／侏羅紀排隊過長，切勿死排，優先確保快通與群舞。</p>
+                </div>
+
+                <div class="bg-milktea-card border border-milktea-border p-4 rounded-xl flex items-start space-x-3 shadow-sm hover:border-milktea-caramel transition">
+                    <span class="bg-milktea-thai text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 font-mono">12</span>
+                    <p class="text-xs md:text-sm text-milktea-text"><strong>穿著與足部保護：</strong>全日預計步數 2.5 萬步以上，務必穿著高支撐性運動鞋。</p>
+                </div>
+
+                <div class="bg-milktea-card border border-milktea-border p-4 rounded-xl flex items-start space-x-3 shadow-sm hover:border-milktea-caramel transition">
+                    <span class="bg-milktea-ocean text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 font-mono">13</span>
+                    <p class="text-xs md:text-sm text-milktea-text"><strong>氣候與輕便雨具：</strong>十月中旬日夜溫差大，建議準備薄外套與輕便雨衣。</p>
+                </div>
+
+                <div class="bg-milktea-card border border-milktea-border p-4 rounded-xl flex items-start space-x-3 shadow-sm hover:border-milktea-caramel transition">
+                    <span class="bg-milktea-caramel text-white font-bold px-2 py-0.5 rounded text-xs shrink-0 font-mono">14</span>
+                    <p class="text-xs md:text-sm text-milktea-text"><strong>隨時查看 App：</strong>設施運行與表演可能隨氣候臨時調整，持續以 App 更新資訊。</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="border-t border-milktea-border py-8 text-center text-milktea-muted text-xs md:text-sm bg-milktea-foam">
+        <div class="max-w-6xl mx-auto space-y-2">
+            <p class="font-nintendo text-milktea-caramel text-lg tracking-wider font-bold">SUPER MARIO ★ USJ 2026</p>
+            <p>© 2026/10/14 日本環球影城任天堂攻略 | 祝您啟動無敵星星，8項快通全制霸通關！</p>
+        </div>
+    </footer>
+
+</body>
+</html>
